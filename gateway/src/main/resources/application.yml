@@ -1,6 +1,9 @@
 spring:
   application:
     name: gateway
+  graphql:
+    graphiql:
+      enabled: true
   config:
     import: optional:configserver:http://localhost:8888
 eureka:

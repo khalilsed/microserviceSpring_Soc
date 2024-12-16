@@ -8,10 +8,13 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
+@ToString
 @Builder
 public class FullSchoolResponse {
 
     private String name;
-    private String email;
-    List<Student> students;
+    private String country;
+    private List<Student> students;
+
 }

@@ -19,7 +19,7 @@ spring:
 
 application:
   config:
-    students-url: "http://localhost:8080/students"
+    students-url: "http://localhost:8222/api/v1/students"
 
 
 eureka:

@@ -6,6 +6,9 @@ spring:
     active: native
   application:
     name: config-server
+  graphql:
+    graphiql:
+      enabled: true
   cloud:
     config:
       server:

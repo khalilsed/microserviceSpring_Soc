@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: gateway
+  graphql:
+    graphiql:
+      enabled: true
   cloud:
     gateway:
       routes:
@@ -14,7 +17,8 @@ spring:
         - id: schools
           uri: lb://schools
           predicates:
-            - Path=/api/v1/schools/**
+            - Path=/graphql/**
+
 
 eureka:
   client:
