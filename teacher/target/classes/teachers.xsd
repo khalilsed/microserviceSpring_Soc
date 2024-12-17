@@ -1,0 +1,28 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://soc.com/teachers"
+           xmlns:tns="http://soc.com/teachers"
+           elementFormDefault="qualified">
+
+    <xs:element name="getAllTeachersRequest"/>
+
+    <xs:element name="getAllTeachersResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Teacher" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="TeacherID" type="xs:int"/>
+                            <xs:element name="Name" type="xs:string"/>
+                            <xs:element name="Age" type="xs:int"/>
+                            <xs:element name="Email" type="xs:string"/>
+                            <xs:element name="Specialite" type="xs:string"/>
+                            <xs:element name="Grade" type="xs:string"/>
+                            <xs:element name="PhoneNumber" type="xs:string"/>
+                            <xs:element name="cin" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

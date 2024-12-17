@@ -1,0 +1,34 @@
+type Student {
+    Name : String
+    Age: Int
+    Email: String
+    Department : String
+    GPA : Int
+    GraduationYear :Int
+}
+
+
+type School {
+    id: Int
+    name: String
+    alpha_two_code : String
+    country : String
+    web_pages : String
+    domains : String
+    stateProvince : String
+}
+
+type FullSchoolResponse {
+    name: String
+    country : String
+    students: [Student]
+}
+
+type Query {
+    findAllSchools: [School]
+    findSchoolWithStudents(schoolId: Int): FullSchoolResponse
+}
+
+type Mutation {
+    saveSchool(name: String, alpha_two_code: String, country: String, web_pages: String,domains: String, stateProvince: String): School
+}
