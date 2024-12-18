@@ -1,0 +1,60 @@
+CREATE DATABASE csv_db;
+USE csv_db;
+CREATE TABLE flights (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    year INT NOT NULL,
+    month INT NOT NULL,
+    day INT NOT NULL,
+    dep_delay INT,
+    arr_delay INT,
+    origin VARCHAR(255),
+    dest VARCHAR(255),
+    air_time INT,
+    distance INT,
+    hour INT,
+    minute INT,
+    name VARCHAR(255)
+);
+
+select * from csv_db.flights;
+
+http://localhost:8090/FlightService
+
+get 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <S:Body>
+        <ns2:getAllFlights xmlns:ns2="http://example.org/">
+        </ns2:getAllFlights>
+    </S:Body>
+</S:Envelope>
+
+
+
+post
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:web="http://example.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:addFlight>
+         <flight>
+            <id>1</id>
+            <year>2024</year>
+            <month>12</month>
+            <day>18</day>
+            <depDelay>15</depDelay>
+            <arrDelay>10</arrDelay>
+            <origin>JFK</origin>
+            <dest>LAX</dest>
+            <airTime>360</airTime>
+            <distance>2475</distance>
+            <hour>14</hour>
+            <minute>30</minute>
+            <name>Flight123</name>
+         </flight>
+      </web:addFlight>
+   </soapenv:Body>
+</soapenv:Envelope>
